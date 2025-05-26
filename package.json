@@ -1,0 +1,28 @@
+{
+  "name": "mrys_movie-reviews",
+  "version": "1.0.0",
+  "description": "",
+  "homepage": "https://github.com/little-mry/mrys_movie-review#readme",
+  "bugs": {
+    "url": "https://github.com/little-mry/mrys_movie-review/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/little-mry/mrys_movie-review.git"
+  },
+  "license": "MIT",
+  "author": "Maria Kjellholm",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node src/server.js"
+  },
+  "dependencies": {
+    "bcrypt": "^6.0.0",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "joi": "^17.13.3",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.15.0"
+  }
+}
