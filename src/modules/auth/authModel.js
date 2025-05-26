@@ -23,6 +23,11 @@ const userSchema = new Schema(
       minlength: [6, "Lösenordet måste vara minst 6 tecken"],
       select: false,
     },
+     role: {
+      type: String,
+      enum: ["user", "admin", "pro"],
+      default: "user",
+    },
   },
   {
     timestamps: true,
