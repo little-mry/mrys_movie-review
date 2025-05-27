@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 import bcrypt from "bcrypt";
 
 const userSchema = new Schema(
@@ -25,12 +25,20 @@ const userSchema = new Schema(
     },
      role: {
       type: String,
-      enum: ["user", "admin", "pro"],
+      enum: ["user", "admin"],
       default: "user",
     },
   },
   {
     timestamps: true,
+    toJSON: {
+      virtuals: true,
+      versionKey: false,
+      transform: (_, ret) => {
+        ret.id = ret._id;
+        delete ret._id;
+      },
+    },
   }
 );
 

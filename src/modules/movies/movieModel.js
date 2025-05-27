@@ -1,4 +1,4 @@
-import mongoose, { Document, Schema, Model } from "mongoose";
+import mongoose, { Schema } from "mongoose";
 
 const movieSchema = new Schema(
   {
@@ -15,7 +15,7 @@ const movieSchema = new Schema(
     },
     releaseYear: {
       type: Number,
-      min: [1888, "Ingen film gjordes före 1888!"],
+      min: [1888, "Inga filmer gjordes före 1888!"],
       max: [new Date().getFullYear, "Releasedatum kan inte vara i framtiden"],
     },
     genre: {
@@ -41,8 +41,8 @@ const movieSchema = new Schema(
     timestamps: true,
     toJSON: {
       virtuals: true,
-      versionKey: false,
-      transform: (_, ret) => {
+      versionKey: false, // versionKey ser ut såhär: __v: 9843543ndfsi7984nlkd9823. här säger man att den inte ska skickas med i ett api-anrop
+      transform: (_, ret) => { //ändrar mongoDBs id från: _id --> id. (ret.id står får return id)
         ret.id = ret._id;
         delete ret._id;
       },
@@ -52,6 +52,5 @@ const movieSchema = new Schema(
 
 //SLugify??
 
-movieSchema.index({ title: 1, releaseYear: 1 }, { unique: true });
 const Movie = mongoose.model("Movie", movieSchema);
 export default Movie;

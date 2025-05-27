@@ -10,7 +10,7 @@ export const registerUser = async (req, res, next) => {
   const { username, email, password } = req.body;
 
   const existingUser = await User.findOne({ $or: [{ email }, { username }] });
-  if (existingUser) {
+  if (!existingUser) {
     return next(
       new AppError(
         "Mailadressen eller användarnamnet finns redan registrerat",
@@ -42,11 +42,7 @@ export const loginUser = async (req, res, next) => {
   const optional = email ? { email } : { username };
   const user = await User.findOne(optional).select("+password");
 
-  if (!user) {
-    return next(new AppError("Felaktiga inloggningsuppgifter", 401));
-  }
-
-  if (!user || user.correctPassword(password)) {
+  if (!user || !(await user.correctPassword(password))) {
     return next(new AppError("Felaktiga inloggningsuppgifter", 401));
   }
 
