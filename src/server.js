@@ -18,6 +18,10 @@ mongoose
 
 /* app.use("/auth", authRouter);
 app.use("/movies", moviesRouter);
-app.use("/reviews", reviewsRouter); */
+app.use("/reviews", reviewsRouter);
+ app.all('*', (req, res, next) => {
+  next(new AppError(`Kan inte hitta ${req.originalUrl}`, 404));
+}); */
+app.use(errorHandler);
 
 app.listen(port, () => console.log(`Servern körs på http://localhost:${port}`));

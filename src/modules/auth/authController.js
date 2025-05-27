@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { jwtSecret, tokenExpiry } from "../../config/config.js";
 import { AppError } from "../../utils/AppError.js";
-import { User } from "./authModel.js";
+import  User  from "./authModel.js";
 
 const signToken = (id, role) =>
   jwt.sign({ id, role }, jwtSecret, { expiresIn: tokenExpiry });

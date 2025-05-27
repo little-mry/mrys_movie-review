@@ -1,4 +1,7 @@
 import { Router } from "express";
+import CatchAsync from "../../utils/CatchAsync.js";
+import { authorization } from "../../middleware/authMiddleware.js";
+import { validate } from "../../middleware/validate.js";
 import {
   addMovie,
   getAllMovies,
@@ -11,7 +14,7 @@ import {
 const router = Router();
 
 //Post a movie
-router.post("/");
+router.post("/", CatchAsync(addMovie));
 
 //Get all movies
 router.get("/");

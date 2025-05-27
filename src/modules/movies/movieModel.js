@@ -41,8 +41,8 @@ const movieSchema = new Schema(
     timestamps: true,
     toJSON: {
       virtuals: true,
-      versionKey: false, // versionKey ser ut såhär: __v: 9843543ndfsi7984nlkd9823. här säger man att den inte ska skickas med i ett api-anrop
-      transform: (_, ret) => { //ändrar mongoDBs id från: _id --> id. (ret.id står får return id)
+      versionKey: false, 
+      transform: (_, ret) => { 
         ret.id = ret._id;
         delete ret._id;
       },
@@ -50,7 +50,10 @@ const movieSchema = new Schema(
   }
 );
 
-//SLugify??
+
+movieSchema.index({ title: 1, releaseYear: 1 }, { unique: true });
 
 const Movie = mongoose.model("Movie", movieSchema);
 export default Movie;
+
+//Slugify??
