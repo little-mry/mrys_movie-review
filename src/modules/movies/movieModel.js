@@ -16,7 +16,7 @@ const movieSchema = new Schema(
     releaseYear: {
       type: Number,
       min: [1888, "Inga filmer gjordes före 1888!"],
-      max: [new Date().getFullYear, "Releasedatum kan inte vara i framtiden"],
+      max: [new Date().getFullYear(), "Releasedatum kan inte vara i framtiden"],
     },
     genre: {
       type: [String],
@@ -31,6 +31,7 @@ const movieSchema = new Schema(
           "Äventyr",
           "Fantasy",
           "Dokumentär",
+          "Romantik"
         ],
         message: "Ogiltig genre: `{VALUE}`",
       },

@@ -5,10 +5,6 @@ export const reviewSchema = Joi.object({
     "string.hex": "movieId måste vara en giltig hex-sträng",
     "any.required": "movieId saknas",
   }),
-  userId: Joi.string().length(24).hex().required().messages({
-    "string.hex": "userId måste vara en giltig hex-sträng",
-    "any.required": "userId saknas",
-  }),
   rating: Joi.number().integer().min(1).max(10).required().messages({
     "number.base": "Rating måste vara ett nummer",
     "number.min": "Rating måste vara minst {#limit}",
@@ -26,9 +22,6 @@ export const updateReviewSchema = Joi.object({
   movieId: Joi.string().length(24).hex().messages({
     "string.hex": "movieId måste vara en giltig hex-sträng",
   }),
-  userId: Joi.string().length(24).hex().messages({
-    "string.hex": "userId måste vara en giltig hex-sträng",
-  }),
   rating: Joi.number().integer().min(1).max(10).messages({
     "number.base": "Rating måste vara ett nummer",
     "number.min": "Rating måste vara minst {#limit}",
@@ -43,7 +36,7 @@ export const updateReviewSchema = Joi.object({
 });
 
 export const reviewIdSchema = Joi.object({
-  reviewId: Joi.string().length(24).hex().required().messages({
+  id: Joi.string().length(24).hex().required().messages({
     "string.hex": "reviewId måste vara en giltig hex-sträng",
     "any.required": "reviewId saknas",
   }),

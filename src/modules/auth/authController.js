@@ -1,6 +1,6 @@
 import jwt from "jsonwebtoken";
 import { jwtSecret, tokenExpiry } from "../../config/config.js";
-import { AppError } from "../../utils/AppError.js";
+import AppError  from "../../utils/AppError.js";
 import  User  from "./authModel.js";
 
 const signToken = (id, role) =>
@@ -10,7 +10,7 @@ export const registerUser = async (req, res, next) => {
   const { username, email, password } = req.body;
 
   const existingUser = await User.findOne({ $or: [{ email }, { username }] });
-  if (!existingUser) {
+  if (existingUser) {
     return next(
       new AppError(
         "Mailadressen eller användarnamnet finns redan registrerat",

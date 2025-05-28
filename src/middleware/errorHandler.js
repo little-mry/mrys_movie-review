@@ -1,6 +1,8 @@
-import { AppError } from "../utils/AppError.js";
+import AppError from "../utils/AppError.js";
 
-export const errorHandler = (err, req, res, next) => {
+const errorHandler = (err, req, res, next) => {
+  console.error("ERR:", err);
+
   let error = err;
 
   if (
@@ -23,3 +25,5 @@ export const errorHandler = (err, req, res, next) => {
     .status(error.statusCode)
     .json({ message: error.message, status: error.statusCode });
 };
+
+export default errorHandler;

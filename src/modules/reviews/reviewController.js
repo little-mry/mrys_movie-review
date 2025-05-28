@@ -1,11 +1,10 @@
-import { AppError } from "../../utils/AppError.js";
+import AppError from "../../utils/AppError.js";
 import Review from "./reviewModel.js";
 import Movie from "../movies/movieModel.js";
 
 export const getAllReviews = async (req, res, next) => {
   const reviews = await Review.find()
     .populate("movieId", "title director releaseYear genre")
-    .lean();
 
   res.status(200).json({
     success: true,
@@ -16,11 +15,12 @@ export const getAllReviews = async (req, res, next) => {
 };
 
 export const findReviewById = async (req, res, next) => {
-  const { reviewId } = req.params;
+  const { id } = req.params;
 
-  const review = await Review.findById(reviewId)
+  const review = await Review.findById(id)
     .populate("movieId", "title director releaseYear genre")
-    .lean();
+    .populate("userId", "username")
+    
 
   if (!review) return next(new AppError("Recension hittades inte", 404));
 
@@ -54,34 +54,34 @@ export const addReview = async (req, res, next) => {
 };
 
 export const updateReviewById = async (req, res, next) => {
-  const { reviewId } = req.params;
+  const { id } = req.params;
   const update = req.body;
 
-  const review = await Review.findByIdAndUpdate(reviewId, update, {
+  const review = await Review.findByIdAndUpdate(id, update, {
     new: true,
   })
     .populate("movieId", "title director releaseYear genre")
-    .lean();
 
   if (!review)
-    return next(new AppError("Recensionen du vill uppdatera hittades inte", 404));
+    return next(
+      new AppError("Recensionen du vill uppdatera hittades inte", 404)
+    );
 
-  const movie = await Movie.findById(review.movieId);
 
   res.status(200).json({
     success: true,
-    data:  review,
+    data: review,
   });
 };
 
 export const deleteReviewById = async (req, res, next) => {
-  const { reviewId } = req.params;
-  const deleted = await Review.findByIdAndDelete(reviewId).lean();
+  const { id } = req.params;
+  const deleted = await Review.findByIdAndDelete(id);
 
   if (!deleted)
     return next(new AppError("Recension du vill radera hittades inte", 404));
 
-  const movie = await Movie.findById(deleted.movieId).lean();
+  const movie = await Movie.findById(deleted.movieId);
 
   res.status(200).json({
     success: true,

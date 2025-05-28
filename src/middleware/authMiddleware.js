@@ -1,6 +1,7 @@
 import jwt from "jsonwebtoken";
 import { jwtSecret } from "../config/config.js";
-import { AppError } from "../utils/AppError.js";
+import AppError from "../utils/AppError.js";
+import User from "../modules/auth/authModel.js";
 
 const authorization = async (req, res, next) => {
   try {
@@ -19,11 +20,11 @@ const authorization = async (req, res, next) => {
     if (!currentUser)
       return next(new AppError("Det finns ingen användare med detta id", 401));
 
-    req.user.id = currentUser.id;
-    req.user.role = currentUser.role;
+    req.user = { id: currentUser._id, role: currentUser.role };
 
     next();
   } catch (error) {
+    console.error("JWT error:", error);
     res.status(401).json({ error: "Ogiltig eller utgången token" });
   }
 };

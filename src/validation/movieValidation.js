@@ -1,15 +1,16 @@
 import Joi from "joi";
 
 const allowedGenres = [
-  "Action",
-  "Drama",
-  "Komedi",
-  "Sci-fi",
-  "Skräck",
-  "Thriller",
-  "Äventyr",
-  "Fantasy",
-  "Dokumentär",
+  "action",
+  "drama",
+  "komedi",
+  "sci-fi",
+  "skräck",
+  "thriller",
+  "äventyr",
+  "fantasy",
+  "dokumentär",
+  "romantik",
 ];
 
 export const movieSchema = Joi.object({
@@ -32,6 +33,7 @@ export const movieSchema = Joi.object({
   genre: Joi.array()
     .items(
       Joi.string()
+        .lowercase()
         .valid(...allowedGenres)
         .messages({
           "any.only":
@@ -78,12 +80,14 @@ export const updateMovieSchema = Joi.object({
     .messages({
       "array.min": "Minst en genre måste anges",
     }),
-}).min(1).messages({
-  "object.min": "Minst ett fält måste anges för uppdatering."
-});
+})
+  .min(1)
+  .messages({
+    "object.min": "Minst ett fält måste anges för uppdatering.",
+  });
 
 export const movieIdSchema = Joi.object({
-  movieId: Joi.string().length(24).hex().required().messages({
+  id: Joi.string().length(24).hex().required().messages({
     "string.hex": "movieId måste vara en giltig hex-sträng",
     "any.required": "movieId saknas",
   }),

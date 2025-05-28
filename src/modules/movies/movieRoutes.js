@@ -13,15 +13,21 @@ import {
   findMovieById,
   updateMovieById,
   deleteMovieById,
-  getMovieReview,
+  getMovieReviews,
+  getMovieRating
 } from "./movieController.js";
 
 const router = Router();
 
-router.use(authorization);
+
 
 //Post a movie
-router.post("/", validate(movieSchema, "body"), CatchAsync(addMovie));
+router.post(
+  "/",
+  authorization,
+  validate(movieSchema, "body"),
+  CatchAsync(addMovie)
+);
 
 //Get all movies
 router.get("/", CatchAsync(getAllMovies));
@@ -36,6 +42,7 @@ router.get(
 //Update a movie by id
 router.put(
   "/:id",
+  authorization,
   validate(movieIdSchema, "params"),
   validate(updateMovieSchema),
   CatchAsync(updateMovieById)
@@ -44,15 +51,23 @@ router.put(
 //Delete a movie by id
 router.delete(
   "/:id",
+  authorization,
   validate(movieIdSchema, "params"),
   CatchAsync(deleteMovieById)
 );
 
-//Get a movie's reviews by id
+//Get a movie's reviews
 router.get(
   "/:id/reviews",
   validate(movieIdSchema, "params"),
-  CatchAsync(getMovieReview)
+  CatchAsync(getMovieReviews)
 );
+
+//Get a movie's avarage rating
+router.get('/:id/ratings',
+  validate(movieIdSchema, "params"),
+  CatchAsync(getMovieRating)
+
+)
 
 export default router;
