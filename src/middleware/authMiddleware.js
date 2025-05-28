@@ -3,7 +3,7 @@ import { jwtSecret } from "../config/config.js";
 import AppError from "../utils/AppError.js";
 import User from "../modules/auth/authModel.js";
 
-const authorization = async (req, res, next) => {
+export const authorization = async (req, res, next) => {
   try {
     const authHeader = req.headers.authorization;
     let token;
@@ -24,9 +24,15 @@ const authorization = async (req, res, next) => {
 
     next();
   } catch (error) {
-    console.error("JWT error:", error);
-    res.status(401).json({ error: "Ogiltig eller utgången token" });
+    return next(new AppError("Ogiltig eller utgången token", 401));
   }
 };
 
-export default authorization;
+export const restrictTo = (...roles) => {
+  return (req, res, next) => {
+    if (!roles.includes(req.user.role)) {
+      return next(new AppError("Du är ej behörig för denna åtgärd", 403));
+    }
+    next();
+  };
+};

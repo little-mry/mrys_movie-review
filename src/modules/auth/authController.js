@@ -1,7 +1,7 @@
 import jwt from "jsonwebtoken";
 import { jwtSecret, tokenExpiry } from "../../config/config.js";
-import AppError  from "../../utils/AppError.js";
-import  User  from "./authModel.js";
+import AppError from "../../utils/AppError.js";
+import User from "./authModel.js";
 
 const signToken = (id, role) =>
   jwt.sign({ id, role }, jwtSecret, { expiresIn: tokenExpiry });
@@ -29,7 +29,7 @@ export const registerUser = async (req, res, next) => {
         id: user.id,
         username: user.username,
         email: user.email,
-        role: user.role
+        role: user.role,
       },
       token: token,
     },
@@ -52,4 +52,20 @@ export const loginUser = async (req, res, next) => {
     success: true,
     token: token,
   });
+};
+
+export const promoteUser = async (req, res, next) => {
+  const { id } = req.params;
+
+  const user = User.findById({ _id: id });
+  if (!user) return next(new AppError("Användaren hittades inte", 404));
+
+  user.role = "admin";
+  await user.save();
+
+  res.status(200).json({
+    success: true,
+    message: 'Användaren är uppgraderad till admin',
+    data: user
+  })
 };

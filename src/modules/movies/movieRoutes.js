@@ -1,6 +1,6 @@
 import { Router } from "express";
 import CatchAsync from "../../utils/CatchAsync.js";
-import authorization from "../../middleware/authMiddleware.js";
+import { authorization, restrictTo } from "../../middleware/authMiddleware.js";
 import validate from "../../middleware/validate.js";
 import {
   movieSchema,
@@ -14,20 +14,10 @@ import {
   updateMovieById,
   deleteMovieById,
   getMovieReviews,
-  getMovieRating
+  getMovieRating,
 } from "./movieController.js";
 
 const router = Router();
-
-
-
-//Post a movie
-router.post(
-  "/",
-  authorization,
-  validate(movieSchema, "body"),
-  CatchAsync(addMovie)
-);
 
 //Get all movies
 router.get("/", CatchAsync(getAllMovies));
@@ -39,10 +29,35 @@ router.get(
   CatchAsync(findMovieById)
 );
 
+//Get a movie's reviews
+router.get(
+  "/:id/reviews",
+  validate(movieIdSchema, "params"),
+  CatchAsync(getMovieReviews)
+);
+
+//Get a movie's avarage rating
+router.get(
+  "/:id/ratings",
+  validate(movieIdSchema, "params"),
+  CatchAsync(getMovieRating)
+);
+
+//ADMIN ONLY
+//Post a movie
+router.post(
+  "/",
+  authorization,
+  restrictTo("admin"),
+  validate(movieSchema, "body"),
+  CatchAsync(addMovie)
+);
+
 //Update a movie by id
 router.put(
   "/:id",
   authorization,
+  restrictTo("admin"),
   validate(movieIdSchema, "params"),
   validate(updateMovieSchema),
   CatchAsync(updateMovieById)
@@ -52,22 +67,9 @@ router.put(
 router.delete(
   "/:id",
   authorization,
+  restrictTo("admin"),
   validate(movieIdSchema, "params"),
   CatchAsync(deleteMovieById)
 );
-
-//Get a movie's reviews
-router.get(
-  "/:id/reviews",
-  validate(movieIdSchema, "params"),
-  CatchAsync(getMovieReviews)
-);
-
-//Get a movie's avarage rating
-router.get('/:id/ratings',
-  validate(movieIdSchema, "params"),
-  CatchAsync(getMovieRating)
-
-)
 
 export default router;

@@ -1,5 +1,5 @@
 import { Router } from "express";
-import authorization from "../../middleware/authMiddleware.js";
+import { authorization } from "../../middleware/authMiddleware.js";
 import validate from "../../middleware/validate.js";
 import CatchAsync from "../../utils/CatchAsync.js";
 import {

@@ -1,5 +1,9 @@
-#Examination Databaser
-##Maria Kjellholm
+# Examination Databaser
+## Maria Kjellholm
+
+Ang roller:
+- Första användaren (mry) har manuellt ändrats till 'admin'
+- Därefter skapas admin av andra admins
 
 Endpoints:
 Auth:
