@@ -1,6 +1,6 @@
 import { AppError } from "../utils/AppError";
 
-export const validate = async (schema, property) => {
+const validate = async (schema, property) => {
   return (req, res, next) => {
     const { error } = schema.validate(req[property]);
     if (error) {
@@ -10,3 +10,5 @@ export const validate = async (schema, property) => {
     next();
   };
 };
+
+export default validate;
