@@ -9,7 +9,7 @@ Ska finnas med:
 > ### Ang roller:
 > - Första användaren (mry) har manuellt ändrats till 'admin' i MongoDB Atlas
 > - Därefter skapas admin av andra admins
->
+
 > ### Endpoints:
 > ####  Auth:
 > **Alla** (utan token)
