@@ -12,12 +12,12 @@ Ska finnas med:
 
 > ### Endpoints:
 > ####  Auth:
-> **Alla** (utan token)
-> - POST /register : Registrera en ny användare.
-> - POST /login : Logga in en användare
+> - **Alla** (utan token)
+>   POST /register : Registrera en ny användare.
+>   POST /login : Logga in en användare
 >
-> **Enbart admin**
-> - PATCH /:id/promote : Uppgradera en användare till admin
+> - **Enbart admin**
+>   PATCH /:id/promote : Uppgradera en användare till admin
 
 ####  Movies:
 **Alla** (utan token)
