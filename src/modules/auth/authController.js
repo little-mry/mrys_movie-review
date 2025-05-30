@@ -57,7 +57,7 @@ export const loginUser = async (req, res, next) => {
 export const promoteUser = async (req, res, next) => {
   const { id } = req.params;
 
-  const user = User.findById({ _id: id });
+  const user = await User.findById(id);
   if (!user) return next(new AppError("Användaren hittades inte", 404));
 
   user.role = "admin";
@@ -65,7 +65,7 @@ export const promoteUser = async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: 'Användaren är uppgraderad till admin',
-    data: user
-  })
+    message: "Användaren är uppgraderad till admin",
+    data: user,
+  });
 };
