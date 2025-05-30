@@ -2,9 +2,12 @@ import AppError from "../../utils/AppError.js";
 import Review from "./reviewModel.js";
 import Movie from "../movies/movieModel.js";
 
+//OPEN ACCESS:
 export const getAllReviews = async (req, res, next) => {
-  const reviews = await Review.find()
-    .populate("movieId", "title director releaseYear genre")
+  const reviews = await Review.find().populate(
+    "movieId",
+    "title director releaseYear genre"
+  );
 
   res.status(200).json({
     success: true,
@@ -19,8 +22,7 @@ export const findReviewById = async (req, res, next) => {
 
   const review = await Review.findById(id)
     .populate("movieId", "title director releaseYear genre")
-    .populate("userId", "username")
-    
+    .populate("userId", "username");
 
   if (!review) return next(new AppError("Recension hittades inte", 404));
 
@@ -30,6 +32,7 @@ export const findReviewById = async (req, res, next) => {
   });
 };
 
+//USER ONLY:
 export const addReview = async (req, res, next) => {
   const userId = req.user.id;
   const { movieId, rating, comment } = req.body;
@@ -41,6 +44,7 @@ export const addReview = async (req, res, next) => {
 
   res.status(201).json({
     success: true,
+    message: "Recension tillagd",
     data: {
       movie: {
         id: movie.id,
@@ -59,17 +63,16 @@ export const updateReviewById = async (req, res, next) => {
 
   const review = await Review.findByIdAndUpdate(id, update, {
     new: true,
-  })
-    .populate("movieId", "title director releaseYear genre")
+  }).populate("movieId", "title director releaseYear genre");
 
   if (!review)
     return next(
       new AppError("Recensionen du vill uppdatera hittades inte", 404)
     );
 
-
   res.status(200).json({
     success: true,
+    message: "Recension uppdaterad",
     data: review,
   });
 };
@@ -85,6 +88,7 @@ export const deleteReviewById = async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+    message: "Recension raderad",
     data: {
       deleted: deleted,
       movie: { id: movie.title, title: movie.title },

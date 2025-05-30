@@ -24,6 +24,7 @@ export const registerUser = async (req, res, next) => {
 
   res.status(201).json({
     success: true,
+    message: 'Användare skapad',
     data: {
       user: {
         id: user.id,
@@ -50,10 +51,12 @@ export const loginUser = async (req, res, next) => {
 
   res.status(200).json({
     success: true,
+        message: 'Användare inloggad',
     token: token,
   });
 };
 
+//ADMIN ONLY
 export const promoteUser = async (req, res, next) => {
   const { id } = req.params;
 

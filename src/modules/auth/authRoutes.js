@@ -19,11 +19,12 @@ router.post(
 
 router.post("/login", validate(loginUserSchema, "body"), CatchAsync(loginUser));
 
+//ADMIN ONLY:
 router.patch(
   "/:id/promote",
   authorization,
   restrictTo("admin"),
-  validate(userIdSchema),
+  validate(userIdSchema, "params"),
   CatchAsync(promoteUser)
 );
 export default router;
