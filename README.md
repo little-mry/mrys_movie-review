@@ -11,12 +11,12 @@ Ska finnas med:
 - Därefter skapas admin av andra admins
 
  ### Endpoints:
- ####  Auth:
- - **Alla** (utan token)
-   - POST /register : Registrera en ny användare.
-   - POST /login : Logga in en användare
- - **Enbart admin**
-   - PATCH /:id/promote : Uppgradera en användare till admin
+ - **Auth**:
+    - **Alla** (utan token)
+        - POST /register : Registrera en ny användare.
+        - POST /login : Logga in en användare
+    - **Enbart admin**
+        - PATCH /:id/promote : Uppgradera en användare till admin
 
 ####  Movies:
 **Alla** (utan token)
