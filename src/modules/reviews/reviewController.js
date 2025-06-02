@@ -61,29 +61,57 @@ export const updateReviewById = async (req, res, next) => {
   const { id } = req.params;
   const update = req.body;
 
-  const review = await Review.findByIdAndUpdate(id, update, {
-    new: true,
-  }).populate("movieId", "title director releaseYear genre");
-
+  const review = await Review.findById(id);
   if (!review)
     return next(
       new AppError("Recensionen du vill uppdatera hittades inte", 404)
     );
 
+  console.log("review.userID: ", review.userId, typeof review.userId);
+  console.log("req.user.id: ", req.user.id, typeof req.user.id);
+  console.log("review.userID.toString: ", review.userId.toString());
+  console.log("req.user.id.toString: ", req.user.id.toString());
+  console.log(
+    "Jämförelse-resultat:",
+    review.userId.toString() === req.user.id.toString()
+  );
+
+  if (review.userId.toString() !== req.user.id.toString()) {
+    return next(
+      new AppError(
+        "Du är inte behörig att uppdatera denna recension pga du har inte skapat den",
+        403
+      )
+    );
+  }
+
+  const updatedReview = await Review.findByIdAndUpdate(id, update, {
+    new: true,
+  }).populate("movieId", "title director releaseYear genre");
+
   res.status(200).json({
     success: true,
     message: "Recension uppdaterad",
-    data: review,
+    data: updatedReview,
   });
 };
 
 export const deleteReviewById = async (req, res, next) => {
   const { id } = req.params;
+
+  const review = await Review.findById(id);
+  if (!review)
+    return next(new AppError("Recensionen du vill radera hittades inte", 404));
+
+  if (review.userId.toString() !== req.user.id.toString()) {
+    return next(
+      new AppError(
+        "Du är inte behörig att radera denna recensionpga du har inte skapat den",
+        403
+      )
+    );
+  }
   const deleted = await Review.findByIdAndDelete(id);
-
-  if (!deleted)
-    return next(new AppError("Recension du vill radera hittades inte", 404));
-
   const movie = await Movie.findById(deleted.movieId);
 
   res.status(200).json({
@@ -91,7 +119,7 @@ export const deleteReviewById = async (req, res, next) => {
     message: "Recension raderad",
     data: {
       deleted: deleted,
-      movie: { id: movie.title, title: movie.title },
+      movieTitle: movie.title,
     },
   });
 };

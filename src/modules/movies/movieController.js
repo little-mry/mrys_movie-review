@@ -1,6 +1,7 @@
 import AppError from "../../utils/AppError.js";
 import Movie from "./movieModel.js";
 import Review from "../reviews/reviewModel.js";
+import mongoose from "mongoose";
 
 const capitalize = (str) =>
   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
@@ -55,7 +56,7 @@ export const getMovieReviews = async (req, res, next) => {
   });
 };
 
-export const getMovieRating = async () => {
+export const getMovieRating = async (req, res, next) => {
   const { id } = req.params;
 
   const movie = await Movie.findById(id);

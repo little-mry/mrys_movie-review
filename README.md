@@ -1,9 +1,6 @@
 # Examination Databaser
 ## Maria Kjellholm
 
-Ska finnas med:
-- Exempelanrop
-- Visa att data sparas i MongoDB
 
 
  ### Ang roller:
@@ -36,3 +33,7 @@ Ska finnas med:
         - PUT /reviews/:id: Uppdatera en specifik recension.
         - DELETE /reviews/:id: Ta bort en specifik recension.
 
+
+Ska finnas med:
+- Exempelanrop
+- Visa att data sparas i MongoDB
