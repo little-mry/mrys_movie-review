@@ -1,0 +1,2113 @@
+{
+	"info": {
+		"_postman_id": "640a37b1-cccf-4d48-9ca3-a0af3c896aa1",
+		"name": "MRY MOVIE REVIEWS",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42119319"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "/register",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"mry\",\r\n\"email\": \"mry@mry.com\",\r\n\"password\": \"mrymry\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/register",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:3000/auth/register",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"honeybun\",\r\n\"email\": \"darling@gmail.com\",\r\n\"password\": \"darling\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "356",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"164-Ep6eh5KGss1y52eUJiMHUCLFFLc\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 10:54:50 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Användare skapad\",\n    \"data\": {\n        \"user\": {\n            \"id\": \"68398e7af1d7638a7f4e4b87\",\n            \"username\": \"ricecake\",\n            \"email\": \"kram@rice.com\",\n            \"role\": \"user\"\n        },\n        \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk4ZTdhZjFkNzYzOGE3ZjRlNGI4NyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NjAyNDkwLCJleHAiOjE3NDg2MTMyOTB9.DhWYbdI2qnO2-C_5DUa_k3XWOBSchvsxSTVxUKAEza0\"\n    }\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"peaachy\",\r\n\"email\": \"darling@gmail.com\",\r\n\"password\": \"123456\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Conflict",
+							"code": 409,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "85",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"55-HGwUTwcIa4Z7WrF9kiEqDwYBPck\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 10:56:29 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Mailadressen eller användarnamnet finns redan registrerat\",\n    \"status\": 409\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"peaachy\",\r\n\"password\": \"123456\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/register",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"register"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "39",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"27-2+u6P8qYw/3Q/2rrfa+47baSXzs\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 10:57:01 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Epost saknas\",\n    \"status\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "/login",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"username\": \"mry\",\r\n\"password\": \"mrymry\"}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/login",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"username\": \"mry\",\r\n\"password\": \"mrymry\"}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/auth/login",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"login"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "250",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fa-KcB4PI7EudkXoSiEzZBcwJ/Ookc\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:06:59 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Användare inloggad\",\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODYwMzIxOSwiZXhwIjoxNzQ4NjE0MDE5fQ._p2AaoXNP_xPRNPxqVirwLznh1dQ9KVhAKNpjTHh5WY\"\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id/promote",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJhZG1pbiIsImlhdCI6MTc0ODYwMzIxOSwiZXhwIjoxNzQ4NjE0MDE5fQ._p2AaoXNP_xPRNPxqVirwLznh1dQ9KVhAKNpjTHh5WY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/auth/68398ec7f1d7638a7f4e4b8a/promote",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"auth",
+								"68398ec7f1d7638a7f4e4b8a",
+								"promote"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/:id/promote",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/auth/68398ec7f1d7638a7f4e4b8a/promote",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"68398ec7f1d7638a7f4e4b8a",
+										"promote"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "251",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"fb-4clqK5ZfBMXbiOESLUi6abpmFjc\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:09:42 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Användaren är uppgraderad till admin\",\n    \"data\": {\n        \"email\": \"darling@gmail.com\",\n        \"username\": \"honeybun\",\n        \"role\": \"admin\",\n        \"createdAt\": \"2025-05-30T10:56:07.035Z\",\n        \"updatedAt\": \"2025-05-30T11:09:42.389Z\",\n        \"id\": \"68398ec7f1d7638a7f4e4b8a\"\n    }\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/auth/6f1d7638a7f4e4b8a/promote",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"auth",
+										"6f1d7638a7f4e4b8a",
+										"promote"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-zHESmEAJ6Ddy2raRIr/iWKs2eos\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:17:40 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\\\"id\\\" length must be 24 characters long\",\n    \"status\": 400\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Movies",
+			"item": [
+				{
+					"name": "/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "884",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"374-qZ1/GPnNRF/Uum5MiZl8uBw+VrY\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:31:59 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"movies\": [\n            {\n                \"title\": \"And Then We Danced\",\n                \"director\": \"Levan Akin\",\n                \"releaseYear\": 2019,\n                \"genre\": [\n                    \"Drama\",\n                    \"Romantik\"\n                ],\n                \"createdAt\": \"2025-05-28T13:05:09.173Z\",\n                \"updatedAt\": \"2025-05-28T13:26:41.132Z\",\n                \"id\": \"68370a05a5046498f05182b5\"\n            },\n            {\n                \"title\": \"Deliverance\",\n                \"director\": \"John Boorman\",\n                \"releaseYear\": 1972,\n                \"genre\": [\n                    \"Thriller\",\n                    \"Äventyr\"\n                ],\n                \"createdAt\": \"2025-05-28T13:18:27.165Z\",\n                \"updatedAt\": \"2025-05-28T13:18:27.165Z\",\n                \"id\": \"68370d2379e688fdaa6c04cb\"\n            },\n            {\n                \"title\": \"Fried green tomatoes\",\n                \"director\": \"Jon Avnet\",\n                \"releaseYear\": 1991,\n                \"genre\": [\n                    \"Komedi\",\n                    \"Drama\"\n                ],\n                \"createdAt\": \"2025-05-30T11:23:22.566Z\",\n                \"updatedAt\": \"2025-05-30T11:23:22.566Z\",\n                \"id\": \"6839952a343d9873d146da7a\"\n            },\n            {\n                \"title\": \"Gilbert Grape\",\n                \"director\": \"Lasse Hallström\",\n                \"releaseYear\": 1993,\n                \"genre\": [\n                    \"Komedi\",\n                    \"Drama\"\n                ],\n                \"createdAt\": \"2025-05-30T11:31:31.792Z\",\n                \"updatedAt\": \"2025-05-30T11:31:31.792Z\",\n                \"id\": \"68399713343d9873d146da83\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/movies/68370a05a5046498f05182b5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"68370a05a5046498f05182b5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": ":id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies/68370a05a5046498f05182b5",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370a05a5046498f05182b5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "225",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"e1-xk8U3/idQAerH8LDY1z0R2OIXns\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 13:23:27 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"title\": \"And Then We Danced\",\n        \"director\": \"Levan Akin\",\n        \"releaseYear\": 2019,\n        \"genre\": [\n            \"Drama\"\n        ],\n        \"createdAt\": \"2025-05-28T13:05:09.173Z\",\n        \"updatedAt\": \"2025-05-28T13:05:09.173Z\",\n        \"id\": \"68370a05a5046498f05182b5\"\n    }\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies/68370a05a5",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370a05a5"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "67",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"43-zHESmEAJ6Ddy2raRIr/iWKs2eos\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:33:25 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"\\\"id\\\" length must be 24 characters long\",\n    \"status\": 400\n}"
+						}
+					]
+				},
+				{
+					"name": "/",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"title\": \"Deliverance \",\r\n    \"director\": \"John Boorman\",\r\n    \"releaseYear\": 1972,\r\n    \"genre\": [\"thriller\", \"Äventyr\"]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/movies",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Fried green tomatoes \",\r\n    \"director\": \"Jon Avnet\",\r\n    \"releaseYear\": 1991,\r\n    \"genre\": [\"komedi\", \"drama\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "260",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"104-ZZrpVVtwPcPMmD6M82yey/Mgnt4\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:23:22 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Film tillagd\",\n    \"data\": {\n        \"title\": \"Fried green tomatoes\",\n        \"director\": \"Jon Avnet\",\n        \"releaseYear\": 1991,\n        \"genre\": [\n            \"Komedi\",\n            \"Drama\"\n        ],\n        \"createdAt\": \"2025-05-30T11:23:22.566Z\",\n        \"updatedAt\": \"2025-05-30T11:23:22.566Z\",\n        \"id\": \"6839952a343d9873d146da7a\"\n    }\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Fried green tomatoes \",\r\n    \"director\": \"Jon Avnet\",\r\n    \"releaseYear\": 1991,\r\n    \"genre\": []\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-a1U+77D0gkZqMEyiW6CmY6aD8mI\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:24:10 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Minst en genre måste anges\",\n    \"status\": 400\n}"
+						},
+						{
+							"name": "FEL",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Fried green tomatoes \",\r\n    \"director\": \"Jon Avnet\",\r\n    \"releaseYear\": 1991,\r\n    \"genre\": [\"dålig\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Bad Request",
+							"code": 400,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "163",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"a3-a6ugVpdz+3JiD1GhbP+PX73OIVY\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:25:30 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Ogiltig genre: dålig. Tillåtna värden är: action, drama, komedi, sci-fi, skräck, thriller, äventyr, fantasy, dokumentär, romantik\",\n    \"status\": 400\n}"
+						},
+						{
+							"name": "EJ BEHÖRIG",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk4ZTdhZjFkNzYzOGE3ZjRlNGI4NyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NjA0NTA2LCJleHAiOjE3NDg2MTUzMDZ9.HD9pVVr6uKc-WsxCJthbQpiHgP424-7YyX6TxHatCY4",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"title\": \"Gilbert Grape \",\r\n    \"director\": \"Lasse Hallström\",\r\n    \"releaseYear\": 1993,\r\n    \"genre\": [\"komedi\", \"drama\"]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "65",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"41-v5zKN3xT4qMn0VP2Fc9sWgxjz+c\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:30:01 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Du är ej behörig för denna åtgärd\",\n    \"status\": 403\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/movies/68370a8740578da4ea405105",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"68370a8740578da4ea405105"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:3000/movies/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n       \"title\": \"Laurence Anyways\",\r\n                \"director\": \"Xavier Dolan\",\r\n                \"releaseYear\": 2012,\r\n                \"genre\": [\r\n                    \"Drama\"\r\n                ]\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies/68370fbb92e85262998db16d",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370fbb92e85262998db16d"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "54",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"36-BY4AWvLQ97SX98ayCxiMIzKm/TQ\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 13:29:48 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"deleted\": \"Laurence Anyways\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\"genre\": [\"drama\", \"romantik\"] }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/movies/68370a05a5046498f05182b5",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"68370a05a5046498f05182b5"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "localhost:3000/movies/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA\"",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\"title\": \"And then we danced\",\r\n    \"genre\": [\"drama\", \"romantik\"] }",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/movies/68370a05a5046498f05182b5",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370a05a5046498f05182b5"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "264",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"108-nB/Fx4cxC5aa1JzWAde7hy2cgpY\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Fri, 30 May 2025 11:39:10 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Film uppdaterat\",\n    \"data\": {\n        \"title\": \"And then we danced\",\n        \"director\": \"Levan Akin\",\n        \"releaseYear\": 2019,\n        \"genre\": [\n            \"Drama\",\n            \"Romantik\"\n        ],\n        \"createdAt\": \"2025-05-28T13:05:09.173Z\",\n        \"updatedAt\": \"2025-05-30T11:39:10.300Z\",\n        \"id\": \"68370a05a5046498f05182b5\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id/reviews",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/movies/68370a05a5046498f05182b5/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"68370a05a5046498f05182b5",
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/:id/reviews",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/movies/68370a05a5046498f05182b5/reviews",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370a05a5046498f05182b5",
+										"reviews"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1207",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4b7-47IYsCRh6D0RUkakRZNCqEMmXkQ\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 08:30:06 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"movie\": {\n            \"id\": \"68370a05a5046498f05182b5\",\n            \"title\": \"And then we danced\",\n            \"director\": \"Levan Akin\",\n            \"releaseYear\": 2019\n        },\n        \"reviews\": [\n            {\n                \"movieId\": \"68370a05a5046498f05182b5\",\n                \"userId\": {\n                    \"username\": \"mry\",\n                    \"id\": \"683700bc8c48d695e7bd7695\"\n                },\n                \"rating\": 10,\n                \"comment\": \"Underbar film om ung förälskelse. Mycket vackert filmat\",\n                \"createdAt\": \"2025-05-28T13:34:58.304Z\",\n                \"updatedAt\": \"2025-05-28T13:34:58.304Z\",\n                \"id\": \"68371102fede053cde8ffaca\"\n            },\n            {\n                \"movieId\": \"68370a05a5046498f05182b5\",\n                \"userId\": {\n                    \"username\": \"ricecake\",\n                    \"id\": \"68398e7af1d7638a7f4e4b87\"\n                },\n                \"rating\": 6,\n                \"comment\": \"Cool dans annars tråkig\",\n                \"createdAt\": \"2025-06-02T07:34:31.349Z\",\n                \"updatedAt\": \"2025-06-02T07:34:31.349Z\",\n                \"id\": \"683d540799a8e184fb08627a\"\n            },\n            {\n                \"movieId\": \"68370a05a5046498f05182b5\",\n                \"userId\": {\n                    \"username\": \"honeybun\",\n                    \"id\": \"68398ec7f1d7638a7f4e4b8a\"\n                },\n                \"rating\": 8,\n                \"comment\": \"Wow\",\n                \"createdAt\": \"2025-06-02T07:33:27.127Z\",\n                \"updatedAt\": \"2025-06-02T07:33:27.127Z\",\n                \"id\": \"683d53c799a8e184fb086274\"\n            },\n            {\n                \"movieId\": \"68370a05a5046498f05182b5\",\n                \"userId\": {\n                    \"username\": \"peaachy\",\n                    \"id\": \"68398fc1f1d7638a7f4e4b8e\"\n                },\n                \"rating\": 8,\n                \"comment\": \"Fin film och häftig dans\",\n                \"createdAt\": \"2025-06-02T07:32:13.787Z\",\n                \"updatedAt\": \"2025-06-02T07:43:47.230Z\",\n                \"id\": \"683d537d99a8e184fb08626f\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id/ratings",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/movies/68370a05a5046498f05182b5/ratings",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"movies",
+								"68370a05a5046498f05182b5",
+								"ratings"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/:id/ratings",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/movies/68370a05a5046498f05182b5/ratings",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"movies",
+										"68370a05a5046498f05182b5",
+										"ratings"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "173",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"ad-6cYswxxqbxDGMFbToFkJFGuLTF4\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 08:33:09 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"movie\": {\n            \"id\": \"68370a05a5046498f05182b5\",\n            \"title\": \"And then we danced\",\n            \"director\": \"Levan Akin\",\n            \"releaseYear\": 2019\n        },\n        \"avarageRating\": 8,\n        \"ratingCount\": 4\n    }\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Reviews",
+			"item": [
+				{
+					"name": "/",
+					"request": {
+						"auth": {
+							"type": "inherit"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"movieId\": \"68370a05a5046498f05182b5\",\r\n    \"rating\": 10,\r\n    \"comment\": \"Underbar film om ung förälskelse. Mycket vackert filmat\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/reviews",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"movieId\": \"68370a05a5046498f05182b5\",\r\n    \"rating\": 10,\r\n    \"comment\": \"Underbar film om ung förälskelse. Mycket vackert filmat\"\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/reviews",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews"
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "415",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19f-EJWc5yu4DaEW1ltPlNgEJMV1oi8\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 28 May 2025 13:34:58 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"movie\": {\n            \"id\": \"68370a05a5046498f05182b5\",\n            \"title\": \"And Then We Danced\",\n            \"director\": \"Levan Akin\",\n            \"releaseYear\": 2019\n        },\n        \"review\": {\n            \"movieId\": \"68370a05a5046498f05182b5\",\n            \"userId\": \"683700bc8c48d695e7bd7695\",\n            \"rating\": 10,\n            \"comment\": \"Underbar film om ung förälskelse. Mycket vackert filmat\",\n            \"createdAt\": \"2025-05-28T13:34:58.304Z\",\n            \"updatedAt\": \"2025-05-28T13:34:58.304Z\",\n            \"id\": \"68371102fede053cde8ffaca\"\n        }\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/reviews/",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								""
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Authorization",
+										"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4MzcwMGJjOGM0OGQ2OTVlN2JkNzY5NSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4NDM2MzUzLCJleHAiOjE3NDg0NDcxNTN9.nsG_3FvtjwJE-crA4MUNUOwboD5ZNrVDXc5ewkTTRQA",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/reviews/",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews",
+										""
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1768",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6e8-SWj81MwT9nFFp4mZOtFvsLylDyw\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 07:40:08 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"reviews\": [\n            {\n                \"movieId\": {\n                    \"title\": \"And then we danced\",\n                    \"director\": \"Levan Akin\",\n                    \"releaseYear\": 2019,\n                    \"genre\": [\n                        \"Drama\",\n                        \"Romantik\"\n                    ],\n                    \"id\": \"68370a05a5046498f05182b5\"\n                },\n                \"userId\": \"683700bc8c48d695e7bd7695\",\n                \"rating\": 10,\n                \"comment\": \"Underbar film om ung förälskelse. Mycket vackert filmat\",\n                \"createdAt\": \"2025-05-28T13:34:58.304Z\",\n                \"updatedAt\": \"2025-05-28T13:34:58.304Z\",\n                \"id\": \"68371102fede053cde8ffaca\"\n            },\n            {\n                \"movieId\": {\n                    \"title\": \"And then we danced\",\n                    \"director\": \"Levan Akin\",\n                    \"releaseYear\": 2019,\n                    \"genre\": [\n                        \"Drama\",\n                        \"Romantik\"\n                    ],\n                    \"id\": \"68370a05a5046498f05182b5\"\n                },\n                \"userId\": \"68398fc1f1d7638a7f4e4b8e\",\n                \"rating\": 7,\n                \"comment\": \"Fin film och häftig dans\",\n                \"createdAt\": \"2025-06-02T07:32:13.787Z\",\n                \"updatedAt\": \"2025-06-02T07:32:13.787Z\",\n                \"id\": \"683d537d99a8e184fb08626f\"\n            },\n            {\n                \"movieId\": {\n                    \"title\": \"And then we danced\",\n                    \"director\": \"Levan Akin\",\n                    \"releaseYear\": 2019,\n                    \"genre\": [\n                        \"Drama\",\n                        \"Romantik\"\n                    ],\n                    \"id\": \"68370a05a5046498f05182b5\"\n                },\n                \"userId\": \"68398ec7f1d7638a7f4e4b8a\",\n                \"rating\": 8,\n                \"comment\": \"Wow\",\n                \"createdAt\": \"2025-06-02T07:33:27.127Z\",\n                \"updatedAt\": \"2025-06-02T07:33:27.127Z\",\n                \"id\": \"683d53c799a8e184fb086274\"\n            },\n            {\n                \"movieId\": {\n                    \"title\": \"And then we danced\",\n                    \"director\": \"Levan Akin\",\n                    \"releaseYear\": 2019,\n                    \"genre\": [\n                        \"Drama\",\n                        \"Romantik\"\n                    ],\n                    \"id\": \"68370a05a5046498f05182b5\"\n                },\n                \"userId\": \"68398e7af1d7638a7f4e4b87\",\n                \"rating\": 6,\n                \"comment\": \"Cool dans annars tråkig\",\n                \"createdAt\": \"2025-06-02T07:34:31.349Z\",\n                \"updatedAt\": \"2025-06-02T07:34:31.349Z\",\n                \"id\": \"683d540799a8e184fb08627a\"\n            },\n            {\n                \"movieId\": {\n                    \"title\": \"Deliverance\",\n                    \"director\": \"John Boorman\",\n                    \"releaseYear\": 1972,\n                    \"genre\": [\n                        \"Thriller\",\n                        \"Äventyr\"\n                    ],\n                    \"id\": \"68370d2379e688fdaa6c04cb\"\n                },\n                \"userId\": \"68398e7af1d7638a7f4e4b87\",\n                \"rating\": 9,\n                \"comment\": \"Kultfilm! Banjoduellen är fanstastisk\",\n                \"createdAt\": \"2025-06-02T07:38:27.516Z\",\n                \"updatedAt\": \"2025-06-02T07:38:27.516Z\",\n                \"id\": \"683d54f399a8e184fb086281\"\n            }\n        ]\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/reviews/683d537d99a8e184fb08626f",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"683d537d99a8e184fb08626f"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/:id",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/reviews/683d537d99a8e184fb08626f",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews",
+										"683d537d99a8e184fb08626f"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "393",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"189-Ifri3en6mT5RPq87Wshd65VWVPA\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 07:40:49 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"data\": {\n        \"movieId\": {\n            \"title\": \"And then we danced\",\n            \"director\": \"Levan Akin\",\n            \"releaseYear\": 2019,\n            \"genre\": [\n                \"Drama\",\n                \"Romantik\"\n            ],\n            \"id\": \"68370a05a5046498f05182b5\"\n        },\n        \"userId\": {\n            \"username\": \"peaachy\",\n            \"id\": \"68398fc1f1d7638a7f4e4b8e\"\n        },\n        \"rating\": 7,\n        \"comment\": \"Fin film och häftig dans\",\n        \"createdAt\": \"2025-06-02T07:32:13.787Z\",\n        \"updatedAt\": \"2025-06-02T07:32:13.787Z\",\n        \"id\": \"683d537d99a8e184fb08626f\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY4Mzk4ZTdhZjFkNzYzOGE3ZjRlNGI4NyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzQ4ODQ5NjQyLCJleHAiOjE3NDg4NjA0NDJ9.IP4BVZ26Q2AIznpZfxED48Jlumj236qPe2J8goUGRGA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"rating\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:3000/reviews/683d540799a8e184fb08627a",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"683d540799a8e184fb08627a"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "FELMEDD",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 7\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/reviews/683d540799a8e184fb08627a",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews",
+										"683d540799a8e184fb08627a"
+									]
+								}
+							},
+							"status": "Forbidden",
+							"code": 403,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "77",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"4d-Q5U1BmFfyIRb7x+bKn4kUIxSAJE\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 07:59:24 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Du är inte behörig att uppdatera denna recension\",\n    \"status\": 403\n}"
+						},
+						{
+							"name": "/:id",
+							"originalRequest": {
+								"method": "PUT",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\r\n    \"rating\": 8\r\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "localhost:3000/reviews/683d54f399a8e184fb086281",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews",
+										"683d54f399a8e184fb086281"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "409",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"199-Uhbsm4vEvbF09CpQo/29K/skCNw\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 08:22:06 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Recension uppdaterad\",\n    \"data\": {\n        \"movieId\": {\n            \"title\": \"Deliverance\",\n            \"director\": \"John Boorman\",\n            \"releaseYear\": 1972,\n            \"genre\": [\n                \"Thriller\",\n                \"Äventyr\"\n            ],\n            \"id\": \"68370d2379e688fdaa6c04cb\"\n        },\n        \"userId\": \"68398e7af1d7638a7f4e4b87\",\n        \"rating\": 8,\n        \"comment\": \"Kultfilm! Banjoduellen är fanstastisk\",\n        \"createdAt\": \"2025-06-02T07:38:27.516Z\",\n        \"updatedAt\": \"2025-06-02T08:22:06.842Z\",\n        \"id\": \"683d54f399a8e184fb086281\"\n    }\n}"
+						}
+					]
+				},
+				{
+					"name": "/:id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "localhost:3000/reviews/683d54f399a8e184fb086281",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"reviews",
+								"683d54f399a8e184fb086281"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "/:id",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "localhost:3000/reviews/683d54f399a8e184fb086281",
+									"host": [
+										"localhost"
+									],
+									"port": "3000",
+									"path": [
+										"reviews",
+										"683d54f399a8e184fb086281"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "JSON",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express",
+									"type": "text"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8",
+									"type": "text"
+								},
+								{
+									"key": "Content-Length",
+									"value": "363",
+									"type": "text"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"16b-PbQkzGk0X/ooDyO0YFCfmWTmWOA\"",
+									"type": "text"
+								},
+								{
+									"key": "Date",
+									"value": "Mon, 02 Jun 2025 08:27:17 GMT",
+									"type": "text"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive",
+									"type": "text"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5",
+									"type": "text"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"success\": true,\n    \"message\": \"Recension raderad\",\n    \"data\": {\n        \"deleted\": {\n            \"movieId\": \"68370d2379e688fdaa6c04cb\",\n            \"userId\": \"68398e7af1d7638a7f4e4b87\",\n            \"rating\": 8,\n            \"comment\": \"Kultfilm! Banjoduellen är fanstastisk\",\n            \"createdAt\": \"2025-06-02T07:38:27.516Z\",\n            \"updatedAt\": \"2025-06-02T08:22:06.842Z\",\n            \"id\": \"683d54f399a8e184fb086281\"\n        },\n        \"movie\": {\n            \"id\": \"Deliverance\",\n            \"title\": \"Deliverance\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
+		}
+	]
+}

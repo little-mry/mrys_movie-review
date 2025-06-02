@@ -67,15 +67,6 @@ export const updateReviewById = async (req, res, next) => {
       new AppError("Recensionen du vill uppdatera hittades inte", 404)
     );
 
-  console.log("review.userID: ", review.userId, typeof review.userId);
-  console.log("req.user.id: ", req.user.id, typeof req.user.id);
-  console.log("review.userID.toString: ", review.userId.toString());
-  console.log("req.user.id.toString: ", req.user.id.toString());
-  console.log(
-    "Jämförelse-resultat:",
-    review.userId.toString() === req.user.id.toString()
-  );
-
   if (review.userId.toString() !== req.user.id.toString()) {
     return next(
       new AppError(

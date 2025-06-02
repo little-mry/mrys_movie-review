@@ -1,11 +1,10 @@
 import AppError from "../../utils/AppError.js";
 import Movie from "./movieModel.js";
 import Review from "../reviews/reviewModel.js";
-import mongoose from "mongoose";
+import { ObjectId } from "mongoose";
 
 const capitalize = (str) =>
   str.charAt(0).toUpperCase() + str.slice(1).toLowerCase();
-
 
 //OPEN ACCESS
 export const getAllMovies = async (req, res, next) => {
@@ -63,7 +62,7 @@ export const getMovieRating = async (req, res, next) => {
   if (!movie) return next(new AppError("Filmen hittades inte", 404));
 
   const rating = await Review.aggregate([
-    { $match: { movieId: new mongoose.Types.ObjectId(id) } },
+    { $match: { movieId: new ObjectId(id) } },
     {
       $group: {
         _id: "$movieId",
@@ -103,7 +102,6 @@ export const getMovieRating = async (req, res, next) => {
     },
   });
 };
-
 
 //ADMIN ONLY:
 export const addMovie = async (req, res, next) => {
@@ -152,7 +150,7 @@ export const deleteMovieById = async (req, res, next) => {
 
   res.status(200).json({
     success: true,
-    message: 'Film raderad',
+    message: "Film raderad",
     data: {
       deleted: deleted.title,
     },
